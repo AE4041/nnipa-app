@@ -1,11 +1,11 @@
 
 
-const Dashboard = () => {
+const OverviewPage = () => {
     return (
-        <div className="flex p-10">
-            <h3 className="text-red-500">Dashboard content</h3>
+        <div className="flex min-h-screen w-full flex-col bg-muted/40">
+            <h3 className="text-red-500">Dashboard content things</h3>
         </div>
     )
 }
 
-export default Dashboard
+export default OverviewPage

@@ -19,4 +19,4 @@ const MenuLink = ({ item, className, isActive }: MenuProps) => {
     )
 }
 
-export default MenuLink
+export default MenuLink;
