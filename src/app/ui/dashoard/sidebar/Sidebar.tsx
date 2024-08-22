@@ -14,7 +14,7 @@ interface MenuSection {
 
 
 const SidebarSection = ({ title, items }: MenuSection) => (
-    <div className="space-y-0">
+    <div className="space-y-1">
         <label className="px-3 text-[0.60rem] text-gray-700 uppercase dark:text-gray-400">
             {title}
         </label>
@@ -50,20 +50,18 @@ const Sidebar = () => {
     ];
 
     return (
-        <div className="fixed">
-            <aside className="flex flex-col w-[200px] h-screen px-5 py-5 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
-                <div className="flex items-center justify-center w-20">
-                    <Image src={Logo} alt="Logo" />
-                </div>
+        <div className="fixed flex flex-col w-[200px] h-screen px-5 py-5 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+            <div className="flex items-center justify-center w-20">
+                <Image src={Logo} alt="Logo" />
+            </div>
 
-                <div className="flex flex-col justify-between flex-1 mt-6">
-                    <nav className="-mx-3 space-y-5">
-                        {menuSections.map((section, idx) => (
-                            <SidebarSection key={idx} title={section.title} items={section.items} />
-                        ))}
-                    </nav>
-                </div>
-            </aside>
+            <div className="flex flex-col justify-between flex-1 mt-6">
+                <nav className="-mx-3 space-y-5">
+                    {menuSections.map((section, idx) => (
+                        <SidebarSection key={idx} title={section.title} items={section.items} />
+                    ))}
+                </nav>
+            </div>
         </div>
     );
 };

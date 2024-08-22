@@ -21,12 +21,12 @@ export const MenuLink = ({ href, label, icon }: MenuProps) => {
             className={classNames(
                 "flex items-center px-3 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700",
                 {
-                    "bg-red-500 text-white": pathname === href,
+                    "bg-[#8b5cf6]/20 text-[#8556f5] font-medium": pathname === href,
                 }
             )}
         >
             {icon}
-            <span className="mx-2 text-sm font-medium">{label}</span>
+            <span className="mx-2 text-sm font-normal">{label}</span>
         </Link>
     );
 };

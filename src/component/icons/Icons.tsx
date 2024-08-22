@@ -6,7 +6,7 @@ interface IconProps {
     className?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ pathData, viewBox = "0 0 24 24", className = "w-5 h-5" }) => {
+const Icon: React.FC<IconProps> = ({ pathData, viewBox = "0 0 24 24", className = "w-4 h-4" }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} fill="currentColor" strokeWidth="1.5" className={className}>
             <path d={pathData}></path>
