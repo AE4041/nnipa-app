@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { MenuLink, MenuProps } from "./MenuLink";
 import Logo from "../../../../../public/logo.png";
@@ -5,18 +6,22 @@ import {
     HomeIcon, CrmIcon, SalesIcon, TaskIcon, MegaPhoneIcon, FieldIcon,
     TeamsIcon, IntegrationIcon, BillIcon, SupportIcon, ActivityIcon
 } from "@/component/icons/Icons";
+import { useAtomValue } from "jotai";
+import { isActiveAtom } from "../navbar/Navbar";
+import classNames from "classnames";
 
 
 interface MenuSection {
     title: string;
     items: MenuProps[];
+    isActive: boolean;
 }
 
 
-const SidebarSection = ({ title, items }: MenuSection) => (
+const SidebarSection = ({ title, items, isActive }: MenuSection) => (
     <div className="space-y-1">
         <label className="px-3 text-[0.60rem] text-gray-700 uppercase dark:text-gray-400">
-            {title}
+            {!isActive && title}
         </label>
         {items.map((item, idx) => (
             <MenuLink key={idx} href={item.href} label={item.label} icon={item.icon} />
@@ -25,7 +30,9 @@ const SidebarSection = ({ title, items }: MenuSection) => (
 );
 
 const Sidebar = () => {
-    const menuSections: MenuSection[] = [
+    const isActive = useAtomValue(isActiveAtom)
+
+    const menuSections: Omit<MenuSection, 'isActive'>[] = [
         {
             title: "modules",
             items: [
@@ -50,7 +57,11 @@ const Sidebar = () => {
     ];
 
     return (
-        <div className="fixed flex flex-col w-[200px] h-screen px-5 py-5 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+        <div className={classNames({
+            "fixed flex flex-col h-screen px-5 py-5 overflow-y-auto duration-300 ease-in-out lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300": true,
+            "w-[200px]": !isActive,
+            "w-[60px]": isActive
+        })}>
             <div className="flex items-center justify-center w-20">
                 <Image src={Logo} alt="Logo" />
             </div>
@@ -58,7 +69,7 @@ const Sidebar = () => {
             <div className="flex flex-col justify-between flex-1 mt-6">
                 <nav className="-mx-3 space-y-5">
                     {menuSections.map((section, idx) => (
-                        <SidebarSection key={idx} title={section.title} items={section.items} />
+                        <SidebarSection key={idx} title={section.title} items={section.items} isActive={isActive} />
                     ))}
                 </nav>
             </div>
