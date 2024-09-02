@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react"
-import { ChartNoAxesColumn, ChartNoAxesGantt, Contact, UsersRound } from "lucide-react"
+import { ChartNoAxesGantt, Contact, UsersRound } from "lucide-react"
 
 const OverviewPage = () => {
     return (
@@ -8,7 +8,7 @@ const OverviewPage = () => {
                 <div>
                     <div className="mb-6 flex w-full items-center justify-between">
                         <div className="hidden sm:block">
-                            <h3 className="text-gray-800 text-sm font-semibold">Overview</h3>
+                            <h3 className="text-gray-700 text-sm font-semibold">Overview</h3>
                         </div>
                         <div className="flex gap-x-2 shrink-0 text-sm">
                             <Button variant="flat" radius="sm" className="bg-[#8556f5] text-white">Get Started</Button>

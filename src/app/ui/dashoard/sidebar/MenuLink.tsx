@@ -19,9 +19,9 @@ export const MenuLink = ({ href, label, icon }: MenuProps) => {
         <Link
             href={href}
             className={classNames(
-                "flex items-center px-3 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700",
+                "flex items-center px-3 py-2 text-[#414955] transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-[#ede9fe] dark:hover:bg-gray-800 dark:hover:text-[#8b5cf6] hover:text-[#8b5cf6]",
                 {
-                    "bg-gray-200/90 text-[#242323] font-medium": pathname === href,
+                    "bg-[#ede9fe] text-[#8b5cf6] font-medium": pathname === href,
                 }
             )}
         >
