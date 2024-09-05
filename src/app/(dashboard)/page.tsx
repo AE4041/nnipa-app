@@ -3,8 +3,8 @@ import { ChartNoAxesGantt, Contact, UsersRound } from "lucide-react"
 
 const OverviewPage = () => {
     return (
-        <div className="min-h-screen w-full">
-            <div className="space-y-16 pt-6">
+        <div className="relative top-14 min-h-screen w-full">
+            <div className="space-y-16">
                 <div>
                     <div className="mb-6 flex w-full items-center justify-between">
                         <div className="hidden sm:block">

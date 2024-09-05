@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { MenuLink, MenuProps } from "./MenuLink";
 import Logo from "../../../../../public/logo.png";
+import LogoSmall from "../../../../../public/logo-b.png";
 import {
     HomeIcon, CrmIcon, SalesIcon, TaskIcon, MegaPhoneIcon, FieldIcon,
     TeamsIcon, IntegrationIcon, BillIcon, SupportIcon, ActivityIcon
@@ -37,7 +38,7 @@ const Sidebar = () => {
             title: "modules",
             items: [
                 { href: "/", label: "Overview", icon: <HomeIcon /> },
-                { href: "#", label: "CRM", icon: <CrmIcon /> },
+                { href: "crm", label: "CRM", icon: <CrmIcon /> },
                 { href: "#", label: "Sales", icon: <SalesIcon /> },
                 { href: "#", label: "Tasks", icon: <TaskIcon /> },
                 { href: "campaigns", label: "Campaigns", icon: <MegaPhoneIcon /> },
