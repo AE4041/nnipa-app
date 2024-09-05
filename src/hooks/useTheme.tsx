@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { ThemeContextType } from "@/utils/constants";
 import { ThemeContext } from "@/utils/ThemeContext";
 
 export const useTheme = () => {

@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <div className={classNames({
-            "fixed z-[1001] left-0 right-0 md:right-auto w-full bg-white border-b ease-in-out duration-300 ": true,
+            "fixed z-50 left-0 right-0 md:right-auto w-full bg-white border-b ease-in-out duration-300 ": true,
             "md:left-[200px] md:w-[calc(100%-200px)]": !isActive,
             "md:left-[60px] md:w-[calc(100%-60px)]": isActive
         })}>
